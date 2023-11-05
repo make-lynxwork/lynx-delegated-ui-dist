@@ -1,0 +1,6 @@
+{
+  "name": "@make-lynxwork/lynx-delegated-ui",
+  "version": "1.0.23",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "repository": "git://github.com/make-lynxwork/lynx-delegated-ui"
+}
