@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lynx Components Playground</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-tertiary: #334155;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --accent: #14b8a6;
+      --accent-hover: #0d9488;
+      --border: #475569;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+    
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      padding: 20px 0;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    
+    .sidebar h1 {
+      font-size: 18px;
+      padding: 0 20px 20px;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+    }
+    
+    .nav-group {
+      padding: 15px 0;
+    }
+    
+    .nav-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      padding: 0 20px 10px;
+    }
+    
+    .nav-item {
+      display: block;
+      padding: 10px 20px;
+      color: var(--text-primary);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 14px;
+    }
+    
+    .nav-item:hover, .nav-item.active {
+      background: var(--bg-tertiary);
+      color: var(--accent);
+    }
+    
+    /* Main content */
+    .main {
+      padding: 30px;
+      overflow-y: auto;
+    }
+    
+    .component-view {
+      display: none;
+    }
+    
+    .component-view.active {
+      display: block;
+    }
+    
+    .component-header {
+      margin-bottom: 30px;
+    }
+    
+    .component-header h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    
+    .component-header p {
+      color: var(--text-secondary);
+    }
+    
+    .demo-section {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    
+    .demo-title {
+      padding: 15px 20px;
+      background: var(--bg-tertiary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .demo-content {
+      padding: 20px;
+      background: white;
+      min-height: 150px;
+    }
+    
+    .demo-controls {
+      padding: 20px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .control-group {
+      margin-bottom: 15px;
+    }
+    
+    .control-group label {
+      display: block;
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+    }
+    
+    .control-group input, .control-group select, .control-group textarea {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      font-size: 14px;
+    }
+    
+    .control-group input:focus, .control-group select:focus, .control-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    .control-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+    
+    .code-block {
+      background: var(--bg-primary);
+      padding: 15px;
+      border-radius: 6px;
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+    
+    /* Inline RDF data for demos */
+    .rdf-data { display: none; }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <h1>🔧 Components</h1>
+      
+      <div class="nav-group">
+        <div class="nav-group-title">Layout</div>
+        <a class="nav-item active" onclick="showComponent('preview')">lynx-ui-preview</a>
+        <a class="nav-item" onclick="showComponent('section')">lynx-section</a>
+        <a class="nav-item" onclick="showComponent('container')">lynx-container</a>
+        <a class="nav-item" onclick="showComponent('short-properties')">lynx-short-properties</a>
+      </div>
+      
+      <div class="nav-group">
+        <div class="nav-group-title">Properties</div>
+        <a class="nav-item" onclick="showComponent('title')">lynx-title</a>
+        <a class="nav-item" onclick="showComponent('plain-property')">lynx-plain-property</a>
+        <a class="nav-item" onclick="showComponent('date-property')">lynx-date-property</a>
+        <a class="nav-item" onclick="showComponent('link-property')">lynx-link-property</a>
+        <a class="nav-item" onclick="showComponent('long-string')">lynx-long-string-property</a>
+      </div>
+      
+      <div class="nav-group">
+        <div class="nav-group-title">Data Display</div>
+        <a class="nav-item" onclick="showComponent('list')">lynx-list</a>
+        <a class="nav-item" onclick="showComponent('table')">lynx-table</a>
+      </div>
+      
+      <div class="nav-group">
+        <div class="nav-group-title">Dialogs</div>
+        <a class="nav-item" onclick="showComponent('select')">lynx-ui-select</a>
+        <a class="nav-item" onclick="showComponent('query')">lynx-ui-query</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Preview Component -->
+      <div id="preview" class="component-view active">
+        <div class="component-header">
+          <h2>lynx-ui-preview</h2>
+          <p>Main component for rendering RDF data with a template</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Live Demo</div>
+          <div class="demo-content" id="preview-demo">
+            <lynx-ui-preview 
+              id="preview-instance"
+              url="/assets/playground/data/sample.ttl"
+              template-path="/assets/playground/templates/preview.html">
+            </lynx-ui-preview>
+          </div>
+          <div class="demo-controls">
+            <div class="control-row">
+              <div class="control-group">
+                <label>URL (RDF source)</label>
+                <input type="text" id="preview-url" value="/assets/playground/data/sample.ttl" onchange="updatePreview()">
+              </div>
+              <div class="control-group">
+                <label>Template Path</label>
+                <input type="text" id="preview-template" value="/assets/playground/templates/preview.html" onchange="updatePreview()">
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="updatePreview()">Update</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Component -->
+      <div id="section" class="component-view">
+        <div class="component-header">
+          <h2>lynx-section</h2>
+          <p>Collapsible section with title and optional icon</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Collapsible Section</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-section title='Section Title' icon='https://picsum.photos/32/32'>
+                <p style='padding: 10px;'>This content can be collapsed by clicking the title.</p>
+              </lynx-section>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Non-Collapsible Section</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-section title='Fixed Section' not-collapsable>
+                <p style='padding: 10px;'>This section cannot be collapsed.</p>
+              </lynx-section>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Container Component -->
+      <div id="container" class="component-view">
+        <div class="component-header">
+          <h2>lynx-container</h2>
+          <p>Content wrapper with optional selection support</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Basic Container</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-container>
+                <lynx-title value='[dcterms:title]' url='[rdf:about]' copy-url new-tab></lynx-title>
+                <lynx-short-properties vertical>
+                  <lynx-plain-property heading='ID' value='[dcterms:identifier]' inline></lynx-plain-property>
+                  <lynx-plain-property heading='Status' value='[oslc_cm:status]' inline></lynx-plain-property>
+                </lynx-short-properties>
+              </lynx-container>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Short Properties Component -->
+      <div id="short-properties" class="component-view">
+        <div class="component-header">
+          <h2>lynx-short-properties</h2>
+          <p>Grid layout for displaying multiple properties</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Vertical Layout</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-short-properties vertical>
+                <lynx-plain-property heading='Identifier' value='[dcterms:identifier]' inline></lynx-plain-property>
+                <lynx-plain-property heading='Title' value='[dcterms:title]' inline></lynx-plain-property>
+                <lynx-plain-property heading='Status' value='[oslc_cm:status]' inline></lynx-plain-property>
+              </lynx-short-properties>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Grid Layout (2 columns)</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-short-properties columns='2'>
+                <lynx-plain-property heading='ID' value='[dcterms:identifier]'></lynx-plain-property>
+                <lynx-plain-property heading='Title' value='[dcterms:title]'></lynx-plain-property>
+                <lynx-plain-property heading='Status' value='[oslc_cm:status]'></lynx-plain-property>
+                <lynx-plain-property heading='Short Title' value='[oslc:shortTitle]'></lynx-plain-property>
+              </lynx-short-properties>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Title Component -->
+      <div id="title" class="component-view">
+        <div class="component-header">
+          <h2>lynx-title</h2>
+          <p>Displays a title with optional URL, icon, and copy functionality</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Full Featured</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-title 
+                heading='Resource'
+                value='[dcterms:title]'
+                url='[rdf:about]'
+                icon='https://picsum.photos/32/32'
+                copy-url
+                new-tab>
+              </lynx-title>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Simple Title</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-title value='[dcterms:title]'></lynx-title>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plain Property Component -->
+      <div id="plain-property" class="component-view">
+        <div class="component-header">
+          <h2>lynx-plain-property</h2>
+          <p>Displays a simple text property with heading</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">With Heading</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-short-properties vertical>
+                <lynx-plain-property heading='Identifier' value='[dcterms:identifier]' inline></lynx-plain-property>
+                <lynx-plain-property heading='Status' value='[oslc_cm:status]' inline></lynx-plain-property>
+                <lynx-plain-property heading='Short Title' value='[oslc:shortTitle]' inline></lynx-plain-property>
+              </lynx-short-properties>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Date Property Component -->
+      <div id="date-property" class="component-view">
+        <div class="component-header">
+          <h2>lynx-date-property</h2>
+          <p>Displays formatted dates from RDF data</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Different Formats</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-short-properties vertical>
+                <lynx-date-property heading='Created (YYYY-MM-DD)' value='[dcterms:created]' format='YYYY-MM-DD' inline></lynx-date-property>
+                <lynx-date-property heading='Created (Long)' value='[dcterms:created]' format='Do MMMM YYYY' inline></lynx-date-property>
+                <lynx-date-property heading='Modified' value='[dcterms:modified]' format='DD/MM/YYYY HH:mm' inline></lynx-date-property>
+              </lynx-short-properties>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Link Property Component -->
+      <div id="link-property" class="component-view">
+        <div class="component-header">
+          <h2>lynx-link-property</h2>
+          <p>Displays a clickable link with optional preview and copy</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Link with Copy</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-link-property 
+                heading='Resource Link'
+                value='[dcterms:title]'
+                url='[rdf:about]'
+                new-tab
+                copy-url>
+              </lynx-link-property>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Long String Property Component -->
+      <div id="long-string" class="component-view">
+        <div class="component-header">
+          <h2>lynx-long-string-property</h2>
+          <p>Displays expandable long text content</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Expandable Description</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/sample.ttl"
+              template="<lynx-long-string-property value='[dcterms:description]'></lynx-long-string-property>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- List Component -->
+      <div id="list" class="component-view">
+        <div class="component-header">
+          <h2>lynx-list</h2>
+          <p>Displays a list of RDF members</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Basic List</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/selection.ttl"
+              template="<lynx-list>
+                <lynx-plain-property heading='Title' value='[dcterms:title]'></lynx-plain-property>
+              </lynx-list>">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table Component -->
+      <div id="table" class="component-view">
+        <div class="component-header">
+          <h2>lynx-table</h2>
+          <p>Displays RDF data in a table format</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Data Table</div>
+          <div class="demo-content">
+            <lynx-ui-preview 
+              url="/assets/playground/data/table-data.ttl"
+              template-path="/assets/playground/templates/table.html">
+            </lynx-ui-preview>
+          </div>
+        </div>
+      </div>
+
+      <!-- Select Component -->
+      <div id="select" class="component-view">
+        <div class="component-header">
+          <h2>lynx-ui-select</h2>
+          <p>Selection dialog for picking RDF resources</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Selection Dialog</div>
+          <div class="demo-content" style="height: 400px;">
+            <lynx-ui-select 
+              url="/assets/playground/data/selection.ttl"
+              template-path="/assets/playground/templates/selection.html">
+            </lynx-ui-select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Query Component -->
+      <div id="query" class="component-view">
+        <div class="component-header">
+          <h2>lynx-ui-query</h2>
+          <p>Query dialog with search and pagination</p>
+        </div>
+        
+        <div class="demo-section">
+          <div class="demo-title">Query Dialog</div>
+          <div class="demo-content" style="height: 400px;">
+            <lynx-ui-query 
+              url="/assets/playground/data/selection.ttl"
+              template-path="/assets/playground/templates/selection.html">
+            </lynx-ui-query>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Load Angular bundle (application builder emits a single main.js entry point) -->
+  <script src="../../main.js"></script>
+  
+  <script>
+    function showComponent(id) {
+      // Hide all views
+      document.querySelectorAll('.component-view').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      
+      // Show selected view
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+    
+    function updatePreview() {
+      const url = document.getElementById('preview-url').value;
+      const template = document.getElementById('preview-template').value;
+      const container = document.getElementById('preview-demo');
+      
+      container.innerHTML = `<lynx-ui-preview 
+        url="${url}"
+        template-path="${template}">
+      </lynx-ui-preview>`;
+    }
+  </script>
+</body>
+</html>
+
