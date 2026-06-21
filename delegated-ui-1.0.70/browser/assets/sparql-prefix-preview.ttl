@@ -1,0 +1,32 @@
+PREFIX dcterms:   <http://purl.org/dc/terms/>
+PREFIX oslc:      <http://open-services.net/ns/core#>
+PREFIX oslc_cm:   <http://open-services.net/ns/cm#>
+PREFIX rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+
+[ rdf:type       rdf:Statement;
+  rdf:object     <https://api.atlassian.com/ex/jira/priority/3>;
+  rdf:predicate  oslc_cm:priority;
+  rdf:subject    <http://localhost:4400/assets/sparql-prefix-preview.ttl>;
+  dcterms:title  "Medium"
+] .
+
+[ rdf:type       rdf:Statement;
+  rdf:object     <https://api.atlassian.com/ex/jira/user/12345>;
+  rdf:predicate  dcterms:creator;
+  rdf:subject    <http://localhost:4400/assets/sparql-prefix-preview.ttl>;
+  dcterms:title  "Jad El-khoury"
+] .
+
+<http://localhost:4400/assets/sparql-prefix-preview.ttl>
+        rdf:type             oslc_cm:ChangeRequest;
+        oslc_cm:priority     <https://api.atlassian.com/ex/jira/priority/3>;
+        oslc_cm:status       "To Do";
+        oslc:shortTitle      "ADC-30"^^rdf:XMLLiteral;
+        dcterms:created      "2024-01-01T14:01:36Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        dcterms:creator      <https://api.atlassian.com/ex/jira/user/12345>;
+        dcterms:description  "Integrate a real-time anomaly detection mechanism to identify and handle erroneous altitude readings promptly."^^rdf:XMLLiteral;
+        dcterms:identifier   "ADC-30";
+        dcterms:modified     "2024-12-30T13:04:58Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        dcterms:title        "Real-time Altitude Anomaly Detection"^^rdf:XMLLiteral .
+
