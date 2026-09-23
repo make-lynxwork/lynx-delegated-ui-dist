@@ -1,0 +1,24 @@
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix oslc:      <http://open-services.net/ns/core#> .
+@prefix oslc_cm:   <http://open-services.net/ns/cm#> .
+@prefix oslc_data: <http://open-services.net/ns/servicemanagement/1.0/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+
+[ rdf:type       rdf:Statement ;
+  rdf:object     <http://xmlns.com/foaf/0.1/Person> ;
+  rdf:predicate  dcterms:creator ;
+  rdf:subject    <http://localhost:4400/assets/0200000000000000ac0001000000.ttl> ;
+  dcterms:title  "oem.pa@eurostep.com"
+] .
+
+<http://localhost:4400/assets/0200000000000000ac0001000000.ttl>
+        rdf:type             oslc_cm:ChangeRequest ;
+        oslc_cm:status       "In work" ;
+        oslc:shortTitle      "TestChangeProposal2"^^rdf:XMLLiteral ;
+        dcterms:created      "2023-06-22T16:37:29Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        dcterms:creator      <http://xmlns.com/foaf/0.1/Person> ;
+        dcterms:description  "<div class='w-full overflow-hidden transition-max-height duration-300'><div><div class='grid grid-flow-col justify-items-start grid-cols-none'>    <div class='flex m-1 flex-col relative'>        <div heading-directive=''>            <span class='text-sm font-medium'>Preview:</span>        </div>        <div class='flex items-center'>            <img src='https://swedensouth1-mediap.svc.ms/transform/thumbnail?provider=spo&amp;inputFormat=docx&amp;cs=ZDcyNTAzMGYtOGM0NS00MTI0LTg4NDAtYzBjODAxMWUxOGU2fFNQTw&amp;docid=https%3A%2F%2Fmakelynxwork.sharepoint.com%2F_api%2Fv2.0%2Fdrives%2Fb!5VCxnT899k-h40OI21JCStL5uTtmH_NIp872Kw6oPHaPyOoXb8dOSLH_rB5heF8Q%2Fitems%2F01O3SDJ5CVDMOXKNDHHFD2JMNLD73MAUUL%3Ftempauth%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfZGlzcGxheW5hbWUiOiJQb2xhcmlvbiBDb25uZWN0aW9uIiwiYXBwaWQiOiJkNzI1MDMwZi04YzQ1LTQxMjQtODg0MC1jMGM4MDExZTE4ZTYiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbWFrZWx5bnh3b3JrLnNoYXJlcG9pbnQuY29tQDFlYmU0NGRmLTBiNmYtNGMxYS05ZGEyLTExNDczZmU5NzcxMyIsImNhY2hla2V5IjoiMGguZnxtZW1iZXJzaGlwfDEwMDMyMDAyOTEwMmRiZGRAbGl2ZS5jb20iLCJlbmRwb2ludHVybCI6IlFYMUI0OVppOUZhR0FoalI4bk9lbmhjQ2tIUDVHVUdBZUwvRDlBa0ZxUjg9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNjAiLCJleHAiOiIxNzEyODQ3NjAwIiwiZmFtaWx5X25hbWUiOiJFbC1raG91cnkiLCJnaXZlbl9uYW1lIjoiSmFkIiwiaXBhZGRyIjoiMjAuMjAuMzUuOTYiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE3MTI4MjYwMDAiLCJwdWlkIjoiMTAwMzIwMDI5MTAyREJERCIsInNjcCI6ImFsbHNpdGVzLmZ1bGxjb250cm9sIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgbXlmaWxlcy5yZWFkIGFsbGZpbGVzLnJlYWQgbXlmaWxlcy53cml0ZSBhbGxmaWxlcy53cml0ZSBteWFwcGZvbGRlci53cml0ZSBteWZpbGVzLnJlYWQgYWxsc2l0ZXMuZnVsbGNvbnRyb2wgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgc2VsZWN0ZWRzaXRlcyBCYXNpY1Byb2plY3RBbGwuUmVhZCBmYXN0U2VhcmNoLnF1ZXJ5c3AgYWxscHJvZmlsZXMucmVhZCBhbGxwcm9maWxlcy5yZWFkIGFsbHByb2ZpbGVzLndyaXRlIiwic2lnbmluX3N0YXRlIjoiW1wia21zaVwiXSIsInNpdGVpZCI6Ik9XUmlNVFV3WlRVdE0yUXpaaTAwWm1ZMkxXRXhaVE10TkRNNE9HUmlOVEkwTWpSaCIsInRpZCI6IjFlYmU0NGRmLTBiNmYtNGMxYS05ZGEyLTExNDczZmU5NzcxMyIsInR0IjoiMiIsInVwbiI6ImphZC5lbGtob3VyeUBseW54d29yay5jb20iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIn0.oQnrMwG-l225_87nMEG3vN1vuf2GRwoaN8-bUevgf1c%26version%3DPublished&amp;width=176&amp;height=176&amp;cb=63834265011'>        </div>    </div><div class='grid grid-flow-row justify-items-start grid-cols-none'>    <div class='flex m-1 flex-col relative'>        <div heading-directive=''>            <span class='text-sm font-medium'>Created By:</span>        </div>        <div class='flex items-center'>            <a hover-class='underline' class='text-blue-600' href='mailto:jad.elkhoury@lynxwork.com' target='_blank'> Jad El-khoury </a>        </div>    </div>    <div class='flex m-1 flex-col relative'>        <div heading-directive=''>            <span class='text-sm font-medium'>Last Modified By:</span>        </div>        <div class='flex items-center'>            <a hover-class='underline' class='text-blue-600' href='mailto:jad.elkhoury@lynxwork.com' target='_blank'> Jad El-khoury </a>        </div>    </div>    <div class='flex m-1 flex-col relative'>        <div heading-directive=''>            <span class='text-sm font-medium'>Last Modified:</span>        </div>        <div class='flex items-center'>             <span>Mon Oct 30 12:16:51 UTC 2023</span>        </div>    </div></div></div></div></div><!----><!----><!----></div><!---->"^^rdf:XMLLiteral ;
+        dcterms:identifier   "0024" ;
+        dcterms:modified     "2023-06-26T13:36:12Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        dcterms:title        "TestChangeProposal2"^^rdf:XMLLiteral .
