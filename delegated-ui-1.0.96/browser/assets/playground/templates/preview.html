@@ -1,0 +1,16 @@
+<lynx-container>
+    <lynx-title url='[rdf:about]' value='[dcterms:title]'
+                icon='https://picsum.photos/32/32' copy-url
+                new-tab></lynx-title>
+    <lynx-short-properties vertical align-items='items-start'>
+        <lynx-plain-property inline heading='Id' value='[dcterms:identifier]' align-items='items-start'></lynx-plain-property>
+        <lynx-plain-property inline heading='Status' value='[oslc_cm:status]' align-items='items-start'></lynx-plain-property>
+        <lynx-date-property inline heading='Created' value='[dcterms:created]' format='YYYY-MM-DD' align-items='items-start'></lynx-date-property>
+        <lynx-date-property inline heading='Modified' value='[dcterms:modified]' format='YYYY-MM-DD' align-items='items-start'></lynx-date-property>
+    </lynx-short-properties>
+    
+    <lynx-section title='Description' collapsed>
+        <lynx-long-string-property value='[dcterms:description]'></lynx-long-string-property>
+    </lynx-section>
+</lynx-container>
+

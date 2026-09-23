@@ -1,0 +1,40 @@
+PREFIX dcterms:   <http://purl.org/dc/terms/>
+PREFIX oslc:      <http://open-services.net/ns/core#>
+PREFIX oslc_cm:   <http://open-services.net/ns/cm#>
+PREFIX oslc_data: <http://open-services.net/ns/servicemanagement/1.0/>
+PREFIX rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+
+<http://localhost:8080/jira/oslc/serviceProviders/ADC/service1/changeRequests/query>
+        rdfs:member  <http://localhost:8080/jira/oslc/changeRequestService/ChangeRequest/10081> .
+
+[ rdf:type       rdf:Statement;
+  rdf:object     <https://api.atlassian.com/ex/jira/a7a02de9-7424-40dc-9e3c-2ac3e3ddf10e/rest/api/3/priority/3>;
+  rdf:predicate  oslc_cm:priority;
+  rdf:subject    <http://localhost:8080/jira/oslc/changeRequestService/ChangeRequest/10081>;
+  dcterms:title  "Medium"
+] .
+
+[ rdf:type       rdf:Statement;
+  rdf:object     <https://api.atlassian.com/ex/jira/a7a02de9-7424-40dc-9e3c-2ac3e3ddf10e/rest/api/3/user?accountId=712020%3Ac8095955-9c74-4d13-95db-f8df32138fe7>;
+  rdf:predicate  dcterms:creator;
+  rdf:subject    <http://localhost:8080/jira/oslc/changeRequestService/ChangeRequest/10081>;
+  dcterms:title  "Jad El-khoury"
+] .
+
+<http://localhost:8080/jira/oslc/serviceProviders/ADC/service1/changeRequests/query?page=1&oslc.pageSize=1&oslc.paging=true&oslc.where=&oslc.prefix=&oslc.searchTerms=>
+        rdf:type         oslc:ResponseInfo;
+        oslc:nextPage    <http://localhost:8080/jira/oslc/serviceProviders/ADC/service1/changeRequests/query?oslc.paging=true&oslc.pageSize=1&oslc.prefix=&page=2&oslc.where=&oslc.searchTerms=>;
+        oslc:totalCount  "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost:8080/jira/oslc/changeRequestService/ChangeRequest/10081>
+        rdf:type             oslc_cm:ChangeRequest;
+        oslc_cm:priority     <https://api.atlassian.com/ex/jira/a7a02de9-7424-40dc-9e3c-2ac3e3ddf10e/rest/api/3/priority/3>;
+        oslc_cm:status       "To Do";
+        dcterms:created      "2024-01-01T14:01:36Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        dcterms:creator      <https://api.atlassian.com/ex/jira/a7a02de9-7424-40dc-9e3c-2ac3e3ddf10e/rest/api/3/user?accountId=712020%3Ac8095955-9c74-4d13-95db-f8df32138fe7>;
+        dcterms:description  "Integrate a real-time anomaly detection mechanism to identify and handle erroneous altitude readings promptly."^^rdf:XMLLiteral;
+        dcterms:identifier   "ADC-30";
+        dcterms:modified     "2024-12-30T13:04:58Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+        dcterms:title        "Real-time Altitude Anomaly Detection"^^rdf:XMLLiteral .
+
