@@ -1,0 +1,50 @@
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix oslc:      <http://open-services.net/ns/core#> .
+@prefix oslc_data: <http://open-services.net/ns/servicemanagement/1.0/> .
+@prefix oslc_qm:   <http://open-services.net/ns/qm#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://localhost:8802/services/cases/CASE-f2646>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "f2646" .
+
+<http://localhost:8802/services/cases/CASE-6c7ec>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "6c7ec" .
+
+<http://localhost:4400/assets/fake-table-data.ttl?page=0&oslc.pageSize=10&oslc.paging=true&oslc.where&oslc.prefix>
+        rdf:type         oslc:ResponseInfo ;
+        oslc:nextPage    <http://localhost:8802/services/projects/1/service1/testCases/query?oslc.paging=true&oslc.pageSize=10&oslc.prefix=&page=1&oslc.where=> ;
+        oslc:totalCount  "9"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost:8802/services/cases/CASE-34703>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "34703" .
+
+<http://localhost:8802/services/cases/CASE-35ce9>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "35ce9" .
+
+<http://localhost:8802/services/projects/1/service1/testCases/query>
+        rdfs:member  <http://localhost:8802/services/cases/CASE-4fd6c> , <http://localhost:8802/services/cases/CASE-35ce9> , <http://localhost:8802/services/cases/CASE-f2646> , <http://localhost:8802/services/cases/CASE-971d0> , <http://localhost:8802/services/cases/CASE-1a0da> , <http://localhost:8802/services/cases/CASE-853c3> , <http://localhost:8802/services/cases/CASE-6c7ec> , <http://localhost:8802/services/cases/CASE-16e8c> , <http://localhost:8802/services/cases/CASE-34703> .
+
+<http://localhost:8802/services/cases/CASE-16e8c>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "16e8c" .
+
+<http://localhost:8802/services/cases/CASE-4fd6c>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "4fd6c" .
+
+<http://localhost:8802/services/cases/CASE-1a0da>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "1a0da" .
+
+<http://localhost:8802/services/cases/CASE-853c3>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "853c3" .
+
+<http://localhost:8802/services/cases/CASE-971d0>
+        rdf:type            oslc_qm:TestCase ;
+        dcterms:identifier  "971d0" .
