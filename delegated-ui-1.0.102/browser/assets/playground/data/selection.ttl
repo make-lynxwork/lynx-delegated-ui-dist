@@ -1,0 +1,201 @@
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix oslc:      <http://open-services.net/ns/core#> .
+@prefix oslc_data: <http://open-services.net/ns/servicemanagement/1.0/> .
+@prefix oslc_qm:   <http://open-services.net/ns/qm#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix test:      <http://refimpl.lynxwork.com/domains/test#> .
+
+<http://localhost:8804/services/plans/PLAN-TP-185>
+    rdf:type            test:DetailedTestPlan ;
+    dcterms:created     "2024-03-10T10:37:48.563Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+    dcterms:identifier  "TP-185" ;
+    dcterms:description  "<div class='w-full overflow-hidden transition-max-height duration-300'><div><div class='grid grid-flow-col justify-items-start grid-cols-none'>    <div class='flex m-1 flex-col relative'>        <div heading-directive=''>            <span class='text-sm font-medium'>Preview:</span>        </div>        <div class='flex items-center'>            <img src='https://swedensouth1-mediap.svc.ms/transform/thumbnail?provider=spo&amp;inputFormat=docx&amp;cs=ZDcyNTAzMGYtOGM0NS00MTI0LTg4NDAtYzBjODAxMWUxOGU2fFNQTw&amp;docid=https%3A%2F%2Fmakelynxwork.sharepoint.com%2F_api%2Fv2.0%2Fdrives%2Fb!5VCxnT899k-h40OI21JCStL5uTtmH_NIp872Kw6oPHaPyOoXb8dOSLH_rB5heF8Q%2Fitems%2F01O3SDJ5CVDMOXKNDHHFD2JMNLD73MAUUL%3Ftempauth%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfZGlzcGxheW5hbWUiOiJQb2xhcmlvbiBDb25uZWN0aW9uIiwiYXBwaWQiOiJkNzI1MDMwZi04YzQ1LTQxMjQtODg0MC1jMGM4MDExZTE4ZTYiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbWFrZWx5bnh3b3JrLnNoYXJlcG9pbnQuY29tQDFlYmU0NGRmLTBiNmYtNGMxYS05ZGEyLTExNDczZmU5NzcxMyIsImNhY2hla2V5IjoiMGguZnxtZW1iZXJzaGlwfDEwMDMyMDAyOTEwMmRiZGRAbGl2ZS5jb20iLCJlbmRwb2ludHVybCI6IlFYMUI0OVppOUZhR0FoalI4bk9lbmhjQ2tIUDVHVUdBZUwvRDlBa0ZxUjg9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNjAiLCJleHAiOiIxNzEyODQ3NjAwIiwiZmFtaWx5X25hbWUiOiJFbC1raG91cnkiLCJnaXZlbl9uYW1lIjoiSmFkIiwiaXBhZGRyIjoiMjAuMjAuMzUuOTYiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE3MTI4MjYwMDAiLCJwdWlkIjoiMTAwMzIwMDI5MTAyREJERCIsInNjcCI6ImFsbHNpdGVzLmZ1bGxjb250cm9sIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgbXlmaWxlcy5yZWFkIGFsbGZpbGVzLnJlYWQgbXlmaWxlcy53cml0ZSBhbGxmaWxlcy53cml0ZSBteWFwcGZvbGRlci53cml0ZSBteWZpbGVzLnJlYWQgYWxsc2l0ZXMuZnVsbGNvbnRyb2wgYWxsc2l0ZXMubWFuYWdlIGFsbHNpdGVzLnJlYWQgYWxsc2l0ZXMud3JpdGUgc2VsZWN0ZWRzaXRlcyBCYXNpY1Byb2plY3RBbGwuUmVhZCBmYXN0U2VhcmNoLnF1ZXJ5c3AgYWxscHJvZmlsZXMucmVhZCBhbGxwcm9maWxlcy5yZWFkIGFsbHByb2ZpbGVzLndyaXRlIiwic2lnbmluX3N0YXRlIjoiW1wia21zaVwiXSIsInNpdGVpZCI6Ik9XUmlNVFV3WlRVdE0yUXpaaTAwWm1ZMkxXRXhaVE10TkRNNE9HUmlOVEkwTWpSaCIsInRpZCI6IjFlYmU0NGRmLTBiNmYtNGMxYS05ZGEyLTExNDczZmU5NzcxMyIsInR0IjoiMiIsInVwbiI6ImphZC5lbGtob3VyeUBseW54d29yay5jb20iLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIn0.oQnrMwG-l225_87nMEG3vN1vuf2GRwoaN8-bUevgf1c%26version%3DPublished&amp;width=176&amp;height=176&amp;cb=63834265011'>        </div>    </div><div class='grid grid-flow-row justify-items-start grid-cols-none'>    <div class='flex m-1 flex-col relative'>        <div heading-directive=''>            <span class='text-sm font-medium'>Created By:</span>        </div>        <div class='flex items-center'>            <a hover-class='underline' class='text-blue-600' href='mailto:jad.elkhoury@lynxwork.com' target='_blank'> Jad El-khoury </a>        </div>    </div>    <div class='flex m-1 flex-col relative'>        <div heading-directive=''>            <span class='text-sm font-medium'>Last Modified By:</span>        </div>        <div class='flex items-center'>            <a hover-class='underline' class='text-blue-600' href='mailto:jad.elkhoury@lynxwork.com' target='_blank'> Jad El-khoury </a>        </div>    </div>    <div class='flex m-1 flex-col relative'>        <div heading-directive=''>            <span class='text-sm font-medium'>Last Modified:</span>        </div>        <div class='flex items-center'>             <span>Mon Oct 30 12:16:51 UTC 2023</span>        </div>    </div></div></div></div></div>"^^rdf:XMLLiteral ;
+    dcterms:title       "Difficult to see. Always in motion is the future..."^^rdf:XMLLiteral ;
+    test:executor       <http://localhost/resource/exe-36> , <http://localhost/resource/exe-35> .
+
+<http://localhost/resource/exe-136>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-55> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "Use your feelings, Obi-Wan, and find him you will." ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "Luminous beings are we - not this crude matter." ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "Hmm. In the end, cowards are those who follow the dark side." .
+
+<http://localhost/resource/addr-197>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Uzbekistan" ;
+    test:streetName    "Berge Square" ;
+    test:streetNumber  "60"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/addr-55>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Malta" ;
+    test:streetName    "Fritsch Parkway" ;
+    test:streetNumber  "748"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/exe-198>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-196> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship." ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "Mudhole? Slimy? My home this is!" ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "Do. Or do not. There is no try." .
+
+<http://localhost/resource/addr-143>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Romania" ;
+    test:streetName    "Rod Green" ;
+    test:streetNumber  "210"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/exe-188>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-79> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "Younglings, younglings gather â€™round." ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "At an end your rule is, and not short enough it was!" ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "Yes, a Jediâ€™s strength flows from the Force. But beware of the dark side. Anger, fear, aggression; the dark side of the Force are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny, consume you it will, as it did Obi-Wanâ€™s apprentice." .
+
+<http://localhost/resource/addr-79>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Kiribati" ;
+    test:streetName    "Price Crossing" ;
+    test:streetNumber  "323"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/exe-99>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-140> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "Feel the force!" ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "Strong is Vader. Mind what you have learned. Save you it can." ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "Not if anything to say about it I have" .
+
+<http://localhost/resource/addr-196>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Armenia" ;
+    test:streetName    "Veum Path" ;
+    test:streetNumber  "415"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/exe-36>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-160> , <http://localhost/resource/addr-183> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "Hmm. In the end, cowards are those who follow the dark side." , "Like fire across the galaxy the Clone Wars spread. In league with the wicked Count Dooku, more and more planets slip. Against this threat, upon the Jedi Knights falls the duty to lead the newly formed army of the Republic. And as the heat of war grows, so, to, grows the prowess of one most gifted student of the Force." ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "The dark side clouds everything. Impossible to see the future is." , "Younglings, younglings gather â€™round." ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "Always pass on what you have learned." , "Pain, suffering, death I feel. Something terrible has happened. Young Skywalker is in pain. Terrible pain" .
+
+<http://localhost:4400/assets/TestPlan/SelectionDialog.ttl>
+    rdfs:member  <http://localhost:8804/services/plans/PLAN-TP-185> , <http://localhost:8804/services/plans/PLAN-TP-101> , <http://localhost:8804/services/plans/PLAN-TP-99> , <http://localhost:8804/services/plans/PLAN-TP-76> , <http://localhost:8804/services/plans/PLAN-TP-51> .
+
+<http://localhost/resource/exe-35>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-143> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "You will find only what you bring in." ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall." ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "Like fire across the galaxy the Clone Wars spread. In league with the wicked Count Dooku, more and more planets slip. Against this threat, upon the Jedi Knights falls the duty to lead the newly formed army of the Republic. And as the heat of war grows, so, to, grows the prowess of one most gifted student of the Force." .
+
+<http://localhost:8804/services/plans/PLAN-TP-101>
+    rdf:type            test:DetailedTestPlan ;
+    dcterms:created     "2024-03-10T10:37:48.461Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+    dcterms:identifier  "TP-101" ;
+    dcterms:title       "Use your feelings, Obi-Wan, and find him you will."^^rdf:XMLLiteral ;
+    test:executor       <http://localhost/resource/exe-188> , <http://localhost/resource/exe-91> .
+
+<http://localhost/resource/addr-160>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Tokelau" ;
+    test:streetName    "Oren Harbor" ;
+    test:streetNumber  "705"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/exe-91>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-197> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall." ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "You will find only what you bring in." ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "Yes, a Jediâ€™s strength flows from the Force. But beware of the dark side. Anger, fear, aggression; the dark side of the Force are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny, consume you it will, as it did Obi-Wanâ€™s apprentice." .
+
+<http://localhost:8804/services/plans/PLAN-TP-76>
+    rdf:type            test:DetailedTestPlan ;
+    dcterms:created     "2024-03-10T10:37:48.564Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+    dcterms:identifier  "TP-76" ;
+    dcterms:title       "Yes, a Jediâ€™s strength flows from the Force. But beware of the dark side. Anger, fear, aggression; the dark side of the Force are they. Easily they flow, quick to join you in a fight. If once you start down the dark path, forever will it dominate your destiny, consume you it will, as it did Obi-Wanâ€™s apprentice."^^rdf:XMLLiteral ;
+    test:executor       <http://localhost/resource/exe-99> , <http://localhost/resource/exe-49> .
+
+<http://localhost:8804/services/plans/PLAN-TP-51>
+    rdf:type            test:DetailedTestPlan ;
+    dcterms:created     "2024-03-10T10:37:48.567Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+    dcterms:identifier  "TP-51" ;
+    dcterms:title       "Soon will I rest, yes, forever sleep. Earned it I have. Twilight is upon me, soon night must fall."^^rdf:XMLLiteral ;
+    test:executor       <http://localhost/resource/exe-198> , <http://localhost/resource/exe-136> .
+
+<http://localhost/resource/addr-184>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Cayman Islands" ;
+    test:streetName    "Louisa Fords" ;
+    test:streetNumber  "453"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/addr-140>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Palau" ;
+    test:streetName    "Rosenbaum Field" ;
+    test:streetNumber  "571"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/exe-49>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-184> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "Do not assume anything Obi-Wan. Clear your mind must be if you are to discover the real villains behind this plot." ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "Adventure. Excitement. A Jedi craves not these things." ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "Good relations with the Wookiees, I have." .
+
+<http://localhost:8804/services/projects/1/service2/detailedTestPlans/query?page=0&oslc.pageSize=5&oslc.paging=true&oslc.searchTerms=>
+    rdf:type         oslc:ResponseInfo ;
+    oslc:nextPage    <http://localhost:8804/services/projects/1/service2/detailedTestPlans/query?oslc.paging=true&oslc.pageSize=5&page=1&oslc.searchTerms=> ;
+    oslc:totalCount  "5"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost/resource/exe-103>
+    rdf:type              test:Executor ;
+    test:deliveryAddress  <http://localhost/resource/addr-31> ;
+    <http://xmlns.com/foaf/0.1/familyName>
+                          "Once you start down the dark path, forever will it dominate your destiny, consume you it will." ;
+    <http://xmlns.com/foaf/0.1/givenName>
+                          "Your weapons, you will not need them." ;
+    <http://xmlns.com/foaf/0.1/name>
+                          "That is why you fail." .
+
+<http://localhost/resource/addr-183>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Belgium" ;
+    test:streetName    "Hane Mountain" ;
+    test:streetNumber  "452"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://localhost:8804/services/plans/PLAN-TP-99>
+    rdf:type            test:DetailedTestPlan ;
+    dcterms:created     "2024-03-10T10:37:48.564Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+    dcterms:identifier  "TP-99" ;
+    dcterms:title       "Younglings, younglings gather â€™round."^^rdf:XMLLiteral ;
+    test:executor       <http://localhost/resource/exe-103> , <http://localhost/resource/exe-36> .
+
+<http://localhost/resource/addr-31>
+    rdf:type           test:DeliveryAddress ;
+    test:country       "Fiji" ;
+    test:streetName    "Sharla Shoals" ;
+    test:streetNumber  "14"^^<http://www.w3.org/2001/XMLSchema#int> .
